@@ -1,0 +1,72 @@
+mask:
+  name: sample_mask
+  description: sample_mask
+  width: 3000000
+  height: 3000000
+
+layers:
+    WG: [2, 0]
+    WGCLAD: [2, 9]
+    WGCLAD2: [3, 9]
+    SLAB150: [20, 0]
+    SLAB90: [30, 0]
+    DEEPTRENCH: [7, 0]
+    WGN: [34, 0]
+    HEATER: [47, 0]
+    M1: [41, 0]
+    M2: [45, 0]
+    M3: [49, 0]
+    VIA1: [40, 0]
+    VIA2: [44, 0]
+    VIA3: [43, 0]
+    NO_TILE_SI: [63, 0]
+    PADDING: [68, 0]
+    TEXT: [66, 0]
+    PORT: [60, 0]
+    label: [60, 0]
+    LABEL: [201, 0]
+    INFO_GEO_HASH: [202, 0]
+    polarization_te: [203, 0]
+    polarization_tm: [204, 0]
+
+chip:
+  rows: 1
+  cols: 1
+  spacing: 150000
+  lane_width: 100000
+
+
+test_protocols:
+  passive_optical_te_coarse:
+    function_name: passive_optical_te
+    settings:
+      polarization: te
+      wavelength_nm_min: 1500
+      wavelength_nm_max: 1600
+      wavelength_nm_step: 0.1
+      fiber_angle: 15
+
+  passive_optical_tm_coarse:
+    function_name: passive_optical_tm
+    settings:
+      polarization: tm
+      wavelength_nm_min: 1500
+      wavelength_nm_max: 1600
+      wavelength_nm_step: 0.1
+      fiber_angle: 15
+
+  obr:
+    function_name: obr
+
+data_analysis_protocols:
+  spiral_loss_vs_length:
+    - version: 0.0.1
+
+  coupling_vs_length:
+    - version: 0.0.1
+
+  cutback:
+    - version: 0.0.1
+
+  obr:
+    - version: 0.0.1
