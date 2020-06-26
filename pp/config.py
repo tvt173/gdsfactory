@@ -19,7 +19,6 @@ from pprint import pprint
 
 import hiyapyco
 import numpy as np
-from git import Repo
 
 from pp.layers import LAYER
 
@@ -145,11 +144,6 @@ CONFIG = load_config()
 CONFIG["grid_unit"] = 1e-6
 CONFIG["grid_resolution"] = 1e-9
 CONFIG["bend_radius"] = 10.0
-
-try:
-    CONFIG["git_hash"] = Repo(repo_path).head.object.hexsha
-except Exception:
-    CONFIG["git_hash"] = __version__
 
 
 def print_config(key=None):

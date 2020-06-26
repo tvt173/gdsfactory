@@ -1,10 +1,7 @@
 -e .
-click
-gitpython
 gdspy
 hiyapyco
 jsondiff
-klayout
 numpy
 pandas
 phidl
@@ -15,4 +12,3 @@ rectpack
 scipy
 shapely
 xlrd
-pytest-regressions

@@ -1,6 +1,0 @@
-angle_resolution: 2.5
-class: circle
-layer: 0
-module: pp.components.circle
-name: circle
-radius: 10

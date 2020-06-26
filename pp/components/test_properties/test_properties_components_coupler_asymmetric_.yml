@@ -1,7 +1,0 @@
-bend: bend_s
-class: coupler_asymmetric
-gap: 0.234
-module: pp.components.coupler_asymmetric
-name: coupler_asymmetric
-waveguide: waveguide
-wg_width: 0.5

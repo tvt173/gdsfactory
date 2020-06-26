@@ -1,8 +1,0 @@
-class: rectangle_centered
-h: 1
-layer: 0
-module: pp.components.rectangle
-name: rectangle_centered
-w: 1
-x: None
-y: None

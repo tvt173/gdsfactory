@@ -21,7 +21,6 @@ modules:
 """
 from phidl import quickplot as qp
 
-# NOTE: import order matters. Only change the order if you know what you are doing
 from pp.config import CONFIG
 from pp.config import call_if_func
 from pp.component import Component
@@ -29,65 +28,39 @@ from pp.component import ComponentReference
 from pp.component import Port
 from pp.name import autoname
 from pp.layers import LAYER
-from pp.layers import layer
-from pp.layers import preview_layerset
-from pp.load_component import load_component
-from pp.load_csv import load_csv
 
 from pp.write_component import get_component_type
 from pp.write_component import show
 from pp.write_component import write_gds
 from pp.write_component import write_component_type
 from pp.write_component import write_component
-from pp.write_doe import write_doe
+
+from pp.components import component_type2factory
+from pp.import_gds import import_gds
 
 import pp.components as c
-import pp.routing as routing
-import pp.bias as bias
 import pp.klive as klive
-import pp.sp as sp
-
-from pp.components import component_factory
-from pp.components.extension import extend_port
-from pp.components.extension import extend_ports
-from pp.add_padding import add_padding
-from pp.add_pins import add_pins
-from pp.import_gds import import_gds
-from pp.plotgds import plotgds
-from pp.pack import pack
 
 __all__ = [
     "CONFIG",
-    "LAYER",
     "Component",
     "ComponentReference",
-    "bias",
+    "LAYER",
+    "Port",
     "autoname",
-    "add_padding",
-    "add_pins",
-    "import_gds",
     "c",
-    "component_factory",
     "call_if_func",
-    "extend_port",
-    "extend_ports",
+    "component_factory",
+    "component_type2factory",
     "get_component_type",
+    "import_gds",
     "klive",
-    "layer",
-    "load_component",
-    "load_csv",
-    "plotgds",
     "preview_layerset",
-    "pack",
     "qp",
-    "routing",
     "show",
-    "sp",
     "write_component",
     "write_component_type",
-    "write_doe",
     "write_gds",
-    "Port",
 ]
 __version__ = "1.1.9"
 

@@ -11,14 +11,9 @@ setup(
     url="https://github.com/PsiQ/gdsfactory",
     version="1.1.9",
     author="PsiQ",
-    scripts=["pp/pf.py"],
     description="python libraries to generate GDS layouts",
     packages=find_packages(),
     include_package_data=True,
     install_requires=get_install_requires(),
     python_requires=">=3.6",
-    entry_points="""
-        [console_scripts]
-        pf=pp.pf:cli
-    """,
 )
