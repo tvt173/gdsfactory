@@ -1,14 +1,7 @@
 -e .
 gdspy
 hiyapyco
-jsondiff
 numpy
-pandas
 phidl
 picwriter
-pyqtree
-qrcode
-rectpack
 scipy
-shapely
-xlrd
