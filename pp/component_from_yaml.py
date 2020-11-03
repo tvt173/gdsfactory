@@ -12,7 +12,7 @@ from pp.components import component_factory as component_factory_default
 from pp.routing import route_factory
 from pp.routing.connect_bundle import link_ports
 
-valid_placements = ["x", "y", "rotation", "mirror"]
+valid_placements = ["x", "y", "rotation", "mirror", "abut"]
 valid_keys = [
     "name",
     "instances",
@@ -180,6 +180,13 @@ def component_from_yaml(
                         f"`{k}` not valid placement {valid_placements} for"
                         f" {instance_name}"
                     )
+                elif k == "abut":
+                    this_port, offset = [vv.strip() for vv in v.split(',')]
+                    offset = float(offset)
+                    dest = routes_conf['optical'][f'{instance_name},{this_port}']
+                    dest_inst, dest_port = dest.split(',')
+                    destination = instances[dest_inst].ports[dest_port]
+                    ref.connect(this_port, destination=destination, overlap=-offset)
                 elif k == "rotation":
                     ref.rotate(v, (ci.x, ci.y))
                 elif k == "mirror":
