@@ -265,7 +265,7 @@ def component_from_yaml(
                 ports1.append(instance_in.ports[port_src_name])
                 ports2.append(instance_out.ports[port_dst_name])
                 route_names.append(f"{port_src_string}:{port_dst_string}")
-            route = link_ports(ports1, ports2, route_filter=route_filter)
+            route = link_ports(ports1, ports2, separation=15.0, bend_radius=280.0, route_filter=route_filter)
             for i, r in enumerate(route):
                 routes[route_names[i]] = r
 
