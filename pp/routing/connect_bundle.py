@@ -149,6 +149,7 @@ def link_ports(
     end_ports: List[Port],
     separation: float = 5.0,
     route_filter: Callable = connect_strip_way_points,
+    waypoint_generator: Callable = generate_manhattan_waypoints,
     **routing_params,
 ) -> List[ComponentReference]:
     """Semi auto-routing for two lists of ports.
@@ -209,7 +210,7 @@ def link_ports(
         start_ports,
         end_ports,
         separation=separation,
-        route_filter=generate_manhattan_waypoints,
+        route_filter=waypoint_generator,
         **routing_params,
     )
 
