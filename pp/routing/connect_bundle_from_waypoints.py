@@ -185,6 +185,7 @@ def _generate_manhattan_bundle_waypoints(
         route: going from one point somewhere within the start_ports bank to
         another point within the end_ports bank
     """
+    backbone_route = np.array(backbone_route)
     backbone_route = remove_flat_angles(backbone_route)
 
     way_segments = [(p0, p1) for p0, p1 in zip(backbone_route[:-1], backbone_route[1:])]
