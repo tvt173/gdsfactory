@@ -192,7 +192,12 @@ def component_from_yaml(
                 elif k == "rotation":
                     ref.rotate(v, (ci.x, ci.y))
                 elif k == "mirror":
-                    ref.mirror((v[0], v[1]), (v[2], v[3]))
+                    if v is True:
+                        ref.mirror((0, 1), (0, 0))
+                    elif v is False:
+                        pass
+                    else:
+                        ref.mirror((v[0], v[1]), (v[2], v[3]))
                 else:
                     setattr(ref, k, v)
 
