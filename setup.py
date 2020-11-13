@@ -11,7 +11,7 @@ setup(
     url="https://github.com/gdsfactory/gdsfactory",
     version="2.1.3",
     author="PsiQ",
-    scripts=["pp/pf.py", "install_klive.py"],
+    scripts=["pp/pf.py"],
     description="python libraries to generate GDS layouts",
     packages=find_packages(),
     include_package_data=True,
