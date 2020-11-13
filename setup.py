@@ -9,7 +9,7 @@ def get_install_requires():
 setup(
     name="gdsfactory",
     url="https://github.com/gdsfactory/gdsfactory",
-    version="2.0.2",
+    version="2.1.3",
     author="PsiQ",
     scripts=["pp/pf.py", "install_klive.py"],
     description="python libraries to generate GDS layouts",
@@ -17,6 +17,7 @@ setup(
     include_package_data=True,
     install_requires=get_install_requires(),
     python_requires=">=3.6",
+    license="MIT",
     entry_points="""
         [console_scripts]
         pf=pp.pf:cli

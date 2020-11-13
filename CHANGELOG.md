@@ -2,9 +2,11 @@
 
 ## TODO
 
+- document klayout placers
+- bundle routing with specific
 - extract netlist from layout using PINS and check if connectivity matches intent
 - create a Klayout library so we can also place components from the klayout menu GUI (available for UBC sample pdk)
-- bundle routing for component_from_yaml
+- make a conda package so you can `conda install gdsfactory`
 
 Maybe:
 
@@ -12,7 +14,24 @@ Maybe:
 
 ## master branch (latest changes not released yet)
 
-- test lenghts for routes
+## 2.1.3 2020-11-09
+
+- `pf install` installs klive, generate_tech and gitdiff
+- `pf diff` makes boolean difference between 2 GDS files
+
+## 2.1.2 2020-11-09
+
+- write conda environment.yml so you can `make conda` to install the conda environment
+- setup.py installs klive, generate_tech and gitdiff
+
+## 2.1.0 2020-11-09
+
+- test lengths for routes
+- pytest are passing now for windows
+    - Fixed the spiral circular error by snapping length to 1nm (windows only)
+    - Testing now for windows and linux in the CICD
+    - Made the multiprocessing calls pickeable by removing the logger function (that wasn't doing much anyway)
+- extend_ports: maintains un-extended ports
 
 ## 2.0.2 2020-11-03
 

@@ -15,3 +15,6 @@ rectpack
 scipy
 shapely
 networkx
+matplotlib
+pytest
+pytest-regressions
