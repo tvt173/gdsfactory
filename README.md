@@ -1,4 +1,4 @@
-# gdsfactory 2.1.3
+# gdsfactory 2.1.4
 
 gdsfactory provides you with generic component functions to build your PDKs and masks for different foundries.
 
@@ -84,6 +84,7 @@ Commands:
 
 ## Links
 
+- [gdsfactory](https://github.com/gdsfactory/gdsfactory): Github repo where we store the gdsfactory code
 - [gdslib](https://github.com/gdsfactory/gdslib): separate repo where we store the component library. Tests ensure the geometric hash of the GDS does not change with the ones locked in the library
   - `component.gds`: GDS
   - `component.json`: JSON file with component properties

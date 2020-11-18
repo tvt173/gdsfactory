@@ -64,20 +64,24 @@ def install_klive():
     print(f"klive installed to {dest}")
 
 
-def symlink(src, dest):
-    """ installs generic layermap """
-    if dest.exists():
-        print("generic tech already installed")
-        return
-
+def copy(src, dest):
+    """ overwrite file or directory
+    """
     dest_folder = dest.parent
     dest_folder.mkdir(exist_ok=True, parents=True)
-    try:
-        os.symlink(src, dest)
-    except Exception:
-        os.remove(dest)
-        os.symlink(src, dest)
-    print(f"added symlink from {src} to {dest}")
+
+    if dest.exists():
+        print(f"removing {dest} already installed")
+        if dest.is_dir():
+            shutil.rmtree(dest)
+        else:
+            os.remove(dest)
+
+    if src.is_dir():
+        shutil.copytree(src, dest)
+    else:
+        shutil.copy(src, dest)
+    print(f"{src} copied to {dest}")
 
 
 def install_generic_tech():
@@ -91,14 +95,18 @@ def install_generic_tech():
     src = cwd / "klayout" / "tech"
     dest = home / klayout_folder / "tech" / "generic"
 
-    symlink(src, dest)
+    copy(src, dest)
 
     src = cwd / "klayout" / "drc" / "generic.lydrc"
     dest = home / klayout_folder / "drc" / "generic.lydrc"
-    symlink(src, dest)
+    copy(src, dest)
 
 
 if __name__ == "__main__":
+    cwd = pathlib.Path(__file__).resolve().parent
+    home = pathlib.Path.home()
+    src = cwd / "klayout" / "tech"
+
     install_gdsdiff()
     install_klive()
     install_generic_tech()
